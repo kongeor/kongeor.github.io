@@ -12,11 +12,31 @@ http://blogawesome.com/
 This blog is awesome
 </description>
 <lastBuildDate>
-Tue, 27 Sep 2016 20:47:15 +0300
+Tue, 27 Sep 2016 18:32:05 +0000
 </lastBuildDate>
 <generator>
 clj-rss
 </generator>
+<item>
+<guid>
+http://blogawesome.com/posts-output/2016-09-27-blogen/
+</guid>
+<link>
+http://blogawesome.com/posts-output/2016-09-27-blogen/
+</link>
+<title>
+Blogen
+</title>
+<description>
+&lt;h3&gt;&lt;a name=&quot;blogen&quot;&gt;&lt;/a&gt;Blogen&lt;/h3&gt;&lt;p&gt;some stuff happened&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;and a quote appeared &lt;/p&gt;&lt;/blockquote&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Tue, 27 Sep 2016 00:00:00 +0000
+</pubDate>
+</item>
 <item>
 <guid>
 http://blogawesome.com/posts-output/2016-01-07-docs/
@@ -90,7 +110,7 @@ Quick Start Guide
 
 </enclosure>
 <pubDate>
-Thu, 07 Jan 2016 00:00:00 +0200
+Thu, 07 Jan 2016 00:00:00 +0000
 </pubDate>
 </item>
 <item>
@@ -110,7 +130,7 @@ Yet Another Post
 
 </enclosure>
 <pubDate>
-Tue, 04 Nov 2014 00:00:00 +0200
+Tue, 04 Nov 2014 00:00:00 +0000
 </pubDate>
 </item>
 <item>
@@ -130,7 +150,7 @@ A Post
 
 </enclosure>
 <pubDate>
-Mon, 10 Mar 2014 00:00:00 +0200
+Mon, 10 Mar 2014 00:00:00 +0000
 </pubDate>
 </item>
 </channel>
