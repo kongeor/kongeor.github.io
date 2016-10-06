@@ -5,7 +5,7 @@
     <title>Blogen: Automating the deployment of a cryogen blog to github pages</title>
     <link rel="canonical" href="http://kongeor.github.io/posts/2016-10-05-automating-the-deployment-of-a-cryogen-blog-to-github-pages/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
+    <link href='//fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
           type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -35,6 +35,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="/">Blogen</a>
+            <i class="fa fa-child" aria-hidden="true"></i>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -84,7 +85,7 @@ git add &#42;
 git commit -a -m &quot;build&quot;
 git push -u origin master
 cd ..
-</code></pre><p>We are configuring <code>git</code> because each build is a fresh new start. <code>GIT&#95;EMAIL</code> and <code>GIT&#95;NAME</code> are pulled from the environmental variables which can be configured in <code>circleci</code>'s project settings. Go to <a href='https://circleci.com/dashboard'>dashboard</a> and click the <i>gear</i> near the project.</p><p>Then we remove the <code>build</code> directory in case it exist - this is done mostly for convenience for local testing. Then <code>foo</code>.github.io is cloned to <code>build</code> directory. This repo will have only the built static site. The fresh compiled site is copied over it, and with the  convenvience of <code>git</code> we add all the files which essentially will have only the diffences, and  push the changes.</p><p>In order for this thing to work, <a href='https://circleci.com/'>circleci</a>  needs to have permissions to push to that repo.</p><h3><a name="setup&#95;ssh&#95;keys"></a>Setup SSH keys</h3><p>You need to generate an <a href='https://help.github.com/articles/generating-an-ssh-key/'>ssh key</a>. Most probably you already have one, but I don't think that it's a good idea to use that one, because you will need to add you private key to [circleci].</p><p>Go to project settings under your <code>foo.github.io</code> repo and add your public key.</p><p>You need to go once again to project settings in <a href='https://circleci.com/dashboard'>dashboard</a>,  find the <code>SSH Permissions</code> settings and add you private <code>SSH</code> key there. Check <a href='https://circleci.com/docs/github-security-ssh-keys/'>this</a> guide.</p><h3><a name="test&#95;it!"></a>Test it!</h3><p>You should be good to test this setup. Create a post, commit and push. <a href='https://circleci.com/'>Circleci</a> should fire up the build and when ready it should push the compiled blog to "production".</p>
+</code></pre><p>We are configuring <code>git</code> because each build is a fresh new start. <code>GIT&#95;EMAIL</code> and <code>GIT&#95;NAME</code> are pulled from the environmental variables which can be configured in <code>circleci</code>'s project settings. Go to <a href='https://circleci.com/dashboard'>dashboard</a> and click the <i>gear</i> near the project.</p><p>Then we remove the <code>build</code> directory in case it exist - this is done mostly for convenience for local testing. Then <code>foo</code>.github.io is cloned to <code>build</code> directory. This repo will have only the built static site. The fresh compiled site is copied over it, and with the  convenvience of <code>git</code> we add all the files which essentially will have only the diffences, and  push the changes.</p><p>In order for this thing to work, <a href='https://circleci.com/'>circleci</a>  needs to have permissions to push to that repo.</p><h3><a name="setup&#95;ssh&#95;keys"></a>Setup SSH keys</h3><p>You need to generate an <a href='https://help.github.com/articles/generating-an-ssh-key/'>ssh key</a>. Most probably you already have one, but I don't think that it's a good idea to use that one, because you will need to add your private key to <a href='https://circleci.com/'>circleci</a>.</p><p>Go to project settings under your <code>foo.github.io</code> repo and add your public key.</p><p>You need to go once again to project settings in <a href='https://circleci.com/dashboard'>dashboard</a>,  find the <code>SSH Permissions</code> settings and add your private <code>SSH</code> key there. You can find more information <a href='https://circleci.com/docs/github-security-ssh-keys/'>here</a>.</p><h3><a name="test&#95;it!"></a>Test it!</h3><p>You should be good to test this setup. Create a post, commit and push. Boom! <a href='https://circleci.com/'>Circleci</a> should fire up the build and when ready it should push the compiled blog to "production".</p>
 </div>
 
 <div id="post-tags">
