@@ -12,20 +12,20 @@ http://kongeor.github.io/
 This is awesome
 </description>
 <lastBuildDate>
-Wed, 05 Oct 2016 20:03:38 +0000
+Thu, 06 Oct 2016 07:05:07 +0000
 </lastBuildDate>
 <generator>
 clj-rss
 </generator>
 <item>
 <guid>
-http://kongeor.github.io/posts/2016-10-05-automating-cryogen-deployment/
+http://kongeor.github.io/posts/2016-10-05-automating-the-deployment-of-a-cryogen-blog-to-github-pages/
 </guid>
 <link>
-http://kongeor.github.io/posts/2016-10-05-automating-cryogen-deployment/
+http://kongeor.github.io/posts/2016-10-05-automating-the-deployment-of-a-cryogen-blog-to-github-pages/
 </link>
 <title>
-Automating Cryogen deployment to github
+Automating the deployment of a cryogen blog to github pages
 </title>
 <description>
 &lt;p&gt;I like static site generators, &lt;code&gt;clojure&lt;/code&gt; and &lt;a href='https://pages.github.com/'&gt;github pages&lt;/a&gt; and for those three reasons I happen to like &lt;a href='http://cryogenweb.org/'&gt;cryogen&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;The only &quot;issue&quot; I encountered when I started playing around with &lt;a href='http://cryogenweb.org/'&gt;cryogen&lt;/a&gt; was &lt;a href='http://cryogenweb.org/docs/deploying-to-github-pages.html'&gt;deployment&lt;/a&gt;. I could make a script to push the generated content to &lt;code&gt;kongeor.github.io&lt;/code&gt; but that was no fun. This process had to be automated and why not using continuous integration platform like &lt;a href='https://circleci.com/'&gt;circleci&lt;/a&gt;?&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;removing&amp;#95;the&amp;#95;&lt;i&gt;blog-prefix&lt;/i&gt;&quot;&gt;&lt;/a&gt;Removing the &lt;i&gt;blog-prefix&lt;/i&gt;&lt;/h3&gt;&lt;p&gt;The first thing to do is to remove the &lt;code&gt;/blog&lt;/code&gt; prefix. We want blog content to be in the root.  We need to edit the &lt;code&gt;resources/templates/config.edn&lt;/code&gt; and remove the &lt;code&gt;:blog-prefix&lt;/code&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;enabling&amp;#95;&lt;code&gt;circleci&lt;/code&gt;&quot;&gt;&lt;/a&gt;Enabling &lt;code&gt;circleci&lt;/code&gt;&lt;/h3&gt;&lt;p&gt;&lt;a href='https://circleci.com/'&gt;Circleci&lt;/a&gt; is going to deploy our blog to &quot;production&quot;. &lt;/p&gt;&lt;p&gt;Create a &lt;code&gt;circle.yml&lt;/code&gt; in the root of the project which should looks something like this:&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;yml&quot;&gt;deployment:
